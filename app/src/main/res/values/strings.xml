@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">LearnDemo</string>
+    <string name="corner_shadow">圆角遮罩</string>
+    <string name="property_animation">属性动画</string>
+    <string name="dispatch_event">事件分发</string>
+    <string name="property_anim_value_animator">ValueAnimator</string>
+    <string name="property_anim_object_animator">ObjectAnimator</string>
+    <string name="property_anim_shake">抖动动画</string>
+    <string name="handler_start_download">开始下载</string>
+    <string name="handler_runnable">HandlerRunnable</string>
+    <string name="handler_message">HandlerMessage</string>
+</resources>

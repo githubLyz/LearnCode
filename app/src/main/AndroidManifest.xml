@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="yujoo.lau.learncode">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:testOnly="false"
+        android:theme="@style/AppTheme">
+        <activity android:name=".TMainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".animation.TIndexShareQualityPropertyAnimationActivity"
+            android:label="@string/property_animation"
+            android:theme="@style/ThemeTranslucent" />
+        <activity
+            android:name=".cornershadow.TCornersShadowActivity"
+            android:label="@string/corner_shadow" />
+        <activity
+            android:name=".event.TDispatchTouchEventActivity"
+            android:label="@string/dispatch_event" />
+        <activity
+            android:name=".handler.THandlerWithRunnableActivity"
+            android:label="@string/handler_runnable" />
+        <activity
+            android:name=".handler.THandlerWithMessageActivity"
+            android:label="@string/handler_message" />
+    </application>
+
+</manifest>

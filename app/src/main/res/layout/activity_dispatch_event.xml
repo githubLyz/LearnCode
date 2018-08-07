@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<liu.lew.to8to.com.learndemo.view.TLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <liu.lew.to8to.com.learndemo.view.TView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        android:background="@color/colorPrimary" />
+</liu.lew.to8to.com.learndemo.view.TLayout>
