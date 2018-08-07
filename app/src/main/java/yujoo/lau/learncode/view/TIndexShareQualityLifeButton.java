@@ -11,7 +11,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import liu.lew.to8to.com.learncode.R;
+import yujoo.lau.learncode.R;
+
 
 /**
  * @author lew.liu

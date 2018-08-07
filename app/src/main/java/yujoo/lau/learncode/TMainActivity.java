@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import liu.lew.to8to.com.learncode.R;
 import yujoo.lau.learncode.animation.TIndexShareQualityPropertyAnimationActivity;
 import yujoo.lau.learncode.cornershadow.TCornersShadowActivity;
 import yujoo.lau.learncode.event.TDispatchTouchEventActivity;

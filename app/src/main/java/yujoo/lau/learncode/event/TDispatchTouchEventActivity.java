@@ -4,7 +4,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.MotionEvent;
 
-import liu.lew.to8to.com.learncode.R;
+import yujoo.lau.learncode.R;
+
 import yujoo.lau.learncode.base.TBaseActivity;
 
 /**

@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
-import liu.lew.to8to.com.learncode.R;
+import yujoo.lau.learncode.R;
 import yujoo.lau.learncode.base.TBaseActivity;
 import yujoo.lau.learncode.view.TIndexShareQualityLifeButton;
 

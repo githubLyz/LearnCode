@@ -8,7 +8,8 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.TextView;
 
-import liu.lew.to8to.com.learncode.R;
+import yujoo.lau.learncode.R;
+
 import yujoo.lau.learncode.base.TBaseActivity;
 import yujoo.lau.learncode.utils.TLog;
 
