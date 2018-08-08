@@ -9,8 +9,8 @@ import android.view.View;
 import yujoo.lau.learncode.animation.TIndexShareQualityPropertyAnimationActivity;
 import yujoo.lau.learncode.cornershadow.TCornersShadowActivity;
 import yujoo.lau.learncode.event.TDispatchTouchEventActivity;
-import yujoo.lau.learncode.handler.THandlerWithMessageActivity;
-import yujoo.lau.learncode.handler.THandlerWithRunnableActivity;
+import yujoo.lau.learncode.asynchronousMessage.THandlerWithMessageActivity;
+import yujoo.lau.learncode.asynchronousMessage.THandlerWithRunnableActivity;
 
 public class TMainActivity extends AppCompatActivity implements View.OnClickListener {
     private Context mContext;
