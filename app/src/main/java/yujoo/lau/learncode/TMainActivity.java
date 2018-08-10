@@ -6,7 +6,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+
 import yujoo.lau.learncode.animation.TIndexShareQualityPropertyAnimationActivity;
+import yujoo.lau.learncode.base.Person;
 import yujoo.lau.learncode.cornershadow.TCornersShadowActivity;
 import yujoo.lau.learncode.event.TDispatchTouchEventActivity;
 import yujoo.lau.learncode.asynchronousMessage.THandlerWithMessageActivity;
@@ -14,13 +18,19 @@ import yujoo.lau.learncode.asynchronousMessage.THandlerWithRunnableActivity;
 
 public class TMainActivity extends AppCompatActivity implements View.OnClickListener {
     private Context mContext;
-
+    private final OkHttpClient mOkHttpClient=new OkHttpClient();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mContext = this;
         initView();
+        initNet();
+    }
+
+    private void initNet() {
+//        Person.Builder builder=new Person.Builder();
+//        Person person=builder.name().age().height().weight()
     }
 
     private void initView() {

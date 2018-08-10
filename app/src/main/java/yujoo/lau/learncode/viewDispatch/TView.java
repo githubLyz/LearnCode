@@ -1,11 +1,14 @@
-package yujoo.lau.learncode.view;
+package yujoo.lau.learncode.viewDispatch;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+
+import com.squareup.okhttp.OkHttpClient;
+
+import yujoo.lau.learncode.utils.TLog;
 
 /**
  * @author lew.liu
@@ -25,25 +28,31 @@ public class TView extends View {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
-        Log.e("TView", "dispatchTouchEvent");
+        TLog.e( "dispatchTouchEvent");
         return super.dispatchTouchEvent(event);
+
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                Log.e("TView", "ACTION_DOWN");
+                TLog.e("ACTION_DOWN");
                 break;
             case MotionEvent.ACTION_UP:
-                Log.e("TView", "ACTION_UP");
+                TLog.e( "ACTION_UP");
                 break;
             case MotionEvent.ACTION_MOVE:
-                Log.e("TView", "ACTION_MOVE");
+                TLog.e( "ACTION_MOVE");
                 break;
         }
 
 
         return super.onTouchEvent(event);
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 }
