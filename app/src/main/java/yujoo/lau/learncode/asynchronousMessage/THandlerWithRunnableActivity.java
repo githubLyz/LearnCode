@@ -1,41 +1,25 @@
-package yujoo.lau.learncode.handler;
+package yujoo.lau.learncode.asynchronousMessage;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.TextView;
 
 import yujoo.lau.learncode.R;
-
 import yujoo.lau.learncode.base.TBaseActivity;
 import yujoo.lau.learncode.utils.TLog;
-
 
 /**
  * @author LEW.LIU
  * @date 2018/8/7
- * @description
+ * @description  handler使用runnable进行异步操作   handler.post(Runnable r)
  */
 
-public class THandlerWithMessageActivity extends TBaseActivity implements View.OnClickListener {
+public class THandlerWithRunnableActivity extends TBaseActivity implements View.OnClickListener {
 
     private TextView mDownloadProgress;
-    @SuppressLint("HandlerLeak")
-    private Handler mUiHandler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            switch (msg.what) {
-                case 1:
-                    TLog.e("当前线程id:" + Thread.currentThread().getId());
-                    mDownloadProgress.setText("下载完成");
-                    break;
-            }
-        }
-    };
-
+    private Handler mUiHandler = new Handler();
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,15 +57,23 @@ public class THandlerWithMessageActivity extends TBaseActivity implements View.O
                 TLog.e("开始下载文件");
                 Thread.sleep(5000);
                 TLog.e("文件下载完成");
-//                Message message=new Message();
-//                message.what=1;
-//                mUiHandler.sendMessage(message);
-
-                mUiHandler.sendEmptyMessage(1);
-
+                Runnable runnable = new Runnable() {
+                    @Override
+                    public void run() {
+                        TLog.e("当前线程id:" + Thread.currentThread().getId());
+                        mDownloadProgress.setText("下载完成");
+                    }
+                };
+                mUiHandler.post(runnable);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mUiHandler.removeCallbacksAndMessages(null);
     }
 }

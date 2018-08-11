@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 /**
  * @author lew.liu
  * @date 2018/7/2
+ * @description  activity基类
  */
 
 public abstract class TBaseActivity extends AppCompatActivity {

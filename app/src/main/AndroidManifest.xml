@@ -28,10 +28,10 @@
             android:name=".event.TDispatchTouchEventActivity"
             android:label="@string/dispatch_event" />
         <activity
-            android:name=".handler.THandlerWithRunnableActivity"
+            android:name=".asynchronousMessage.THandlerWithRunnableActivity"
             android:label="@string/handler_runnable" />
         <activity
-            android:name=".handler.THandlerWithMessageActivity"
+            android:name=".asynchronousMessage.THandlerWithMessageActivity"
             android:label="@string/handler_message" />
     </application>
 
