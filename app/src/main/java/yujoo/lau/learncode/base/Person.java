@@ -42,7 +42,7 @@ public class Person {
             return this;
         }
 
-        public Person Build(){
+        public Person build(){
             return new Person(this);
         }
     }

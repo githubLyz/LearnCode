@@ -7,6 +7,10 @@
     <string name="property_anim_object_animator">ObjectAnimator</string>
     <string name="property_anim_shake">抖动动画</string>
     <string name="handler_start_download">开始下载</string>
+    <string name="gesture_image">手势图片</string>
     <string name="handler_runnable">HandlerRunnable</string>
     <string name="handler_message">HandlerMessage</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -33,6 +33,9 @@
         <activity
             android:name=".asynchronousMessage.THandlerWithMessageActivity"
             android:label="@string/handler_message" />
+        <activity android:name=".gesture.TGestureImageViewActivity"
+            android:label="@string/gesture_image"
+            />
     </application>
 
 </manifest>

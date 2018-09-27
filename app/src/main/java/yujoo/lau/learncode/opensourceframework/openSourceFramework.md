@@ -2,5 +2,15 @@
    OkHttp：
       一:使用简介:1.创建OkHttpClient,只需要创建一个
                  2.创建request对象，通过内部类Builder调用生成Request对象
-                 3.创建一个call对象，调用execute/enqueue方法执行网络请求
-      二：源码剖析：会拦截之后分发           
+                 3.创建一个call对象，调用execute/enqueue(异步)方法执行网络请求
+      二：源码剖析：会拦截之后分发
+    Volley:
+         使用简介：1.首先需要获取到一个RequestQueue对象
+                  2.创建一个StringRequest对象
+                  3.把StringRequest添加到RequestQueue中
+                总结：通过newRequestQueue(...)函数新建并启动一个请求队列后，只需要往这个请求队列不断添加
+                      Request即可
+    可以做高并发异步请求，有一个消息队列
+    Butterknife:
+                其实就是一个通过Java注解机制来实现辅助代码生成的框架 
+    Glide:            

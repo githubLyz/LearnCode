@@ -15,10 +15,11 @@ import yujoo.lau.learncode.cornershadow.TCornersShadowActivity;
 import yujoo.lau.learncode.event.TDispatchTouchEventActivity;
 import yujoo.lau.learncode.asynchronousMessage.THandlerWithMessageActivity;
 import yujoo.lau.learncode.asynchronousMessage.THandlerWithRunnableActivity;
+import yujoo.lau.learncode.gesture.TGestureImageViewActivity;
 
 public class TMainActivity extends AppCompatActivity implements View.OnClickListener {
     private Context mContext;
-    private final OkHttpClient mOkHttpClient=new OkHttpClient();
+    private final OkHttpClient mOkHttpClient = new OkHttpClient();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +40,7 @@ public class TMainActivity extends AppCompatActivity implements View.OnClickList
         findViewById(R.id.btn_dispatch_event).setOnClickListener(this);
         findViewById(R.id.btn_handler_runnable).setOnClickListener(this);
         findViewById(R.id.btn_handler_message).setOnClickListener(this);
+        findViewById(R.id.btn_gesture_image).setOnClickListener(this);
     }
 
     @Override
@@ -59,6 +61,9 @@ public class TMainActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.btn_handler_message:
                 intent.setClass(mContext, THandlerWithMessageActivity.class);
+                break;
+            case R.id.btn_gesture_image:
+                intent.setClass(mContext, TGestureImageViewActivity.class);
                 break;
         }
         startActivity(intent);

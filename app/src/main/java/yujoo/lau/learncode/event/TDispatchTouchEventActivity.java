@@ -18,6 +18,7 @@ public class TDispatchTouchEventActivity extends TBaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_dispatch_event, false, false);
     }
 

@@ -1,4 +1,4 @@
-package yujoo.lau.learncode.viewDispatch;
+package yujoo.lau.learncode.view;
 
 import android.content.Context;
 import android.graphics.Canvas;

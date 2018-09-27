@@ -8,6 +8,8 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import yujoo.lau.learncode.R;
 
 import yujoo.lau.learncode.base.TBaseActivity;
