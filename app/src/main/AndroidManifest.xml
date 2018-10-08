@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:testOnly="false"
         android:theme="@style/AppTheme">
-        <activity android:name=".TMainActivity">
+        <activity android:name=".gesture.TGestureImageViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,9 +33,9 @@
         <activity
             android:name=".asynchronousMessage.THandlerWithMessageActivity"
             android:label="@string/handler_message" />
-        <activity android:name=".gesture.TGestureImageViewActivity"
-            android:label="@string/gesture_image"
-            />
+        <!--<activity android:name=".gesture.TGestureImageViewActivity"-->
+        <!--android:label="@string/gesture_image"-->
+        <!--/>-->
     </application>
 
 </manifest>

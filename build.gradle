@@ -22,7 +22,13 @@ allprojects {
         jcenter()
         maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
         maven { url "https://jitpack.io" }
-
+        maven {
+            credentials {
+                username "admin"
+                password "admin123"
+            }
+            url "http://192.168.3.227:8081/nexus/content/repositories/thirdparty/"
+        }
     }
 }
 

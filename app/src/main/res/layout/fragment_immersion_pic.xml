@@ -2,18 +2,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
-    android:clipChildren="false">
+    android:background="#000000">
 
-    <FrameLayout
-        android:id="@+id/father"
+    <io.rong.photoview.PhotoView
+        android:id="@+id/iv_immersion"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_marginLeft="-20dp"
-        android:background="#eb6">
-        <yujoo.lau.learncode.view.photoview.PhotoView
-            android:id="@+id/iv_immersion"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </FrameLayout>
+        android:layout_height="match_parent" />
+    <!--<ImageView-->
+        <!--android:id="@+id/iv_immersion"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" />-->
 </RelativeLayout>

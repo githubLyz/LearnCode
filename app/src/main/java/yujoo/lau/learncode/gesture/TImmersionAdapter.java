@@ -6,10 +6,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+
+import io.rong.photoview.PhotoView;
 import yujoo.lau.learncode.R;
-import yujoo.lau.learncode.view.photoview.PhotoView;
+import yujoo.lau.learncode.view.TRecyclerViewLoadMoreView;
 
 /**
  * @author lew.liu
@@ -19,6 +22,8 @@ import yujoo.lau.learncode.view.photoview.PhotoView;
 public class TImmersionAdapter extends RecyclerView.Adapter {
     private Context mContext;
     private int[] mDrawables;
+    private final int NORMAL_TYPE = 1;
+    private final int LOAD_MORE_TYPE = -1;
 
     public TImmersionAdapter(Context mContext, int[] drawables) {
         this.mContext = mContext;
@@ -28,26 +33,48 @@ public class TImmersionAdapter extends RecyclerView.Adapter {
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ImageHolder(LayoutInflater.from(mContext).inflate(R.layout.fragment_immersion_pic, parent, false));
+        if (NORMAL_TYPE == viewType) {
+            return new ImageHolder(LayoutInflater.from(mContext).inflate(R.layout.fragment_immersion_pic, parent, false));
+        } else {
+            return new LoadMoreHolder(LayoutInflater.from(mContext).inflate(R.layout.immersion_load_more, parent, false));
+        }
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        ImageHolder imageHolder = (ImageHolder) holder;
-        imageHolder.mImageView.setImageDrawable(mContext.getResources().getDrawable(mDrawables[position]));
+        if (NORMAL_TYPE == getItemViewType(position)) {
+            ImageHolder imageHolder = (ImageHolder) holder;
+            Glide.with(mContext).asBitmap().load(mDrawables[position]).into(imageHolder.mImageView);
+        }
     }
 
     @Override
     public int getItemCount() {
-        return mDrawables.length;
+        return mDrawables.length + 1;
     }
 
-    private class ImageHolder extends RecyclerView.ViewHolder {
-        private PhotoView mImageView;
+    @Override
+    public int getItemViewType(int position) {
+        if (position == mDrawables.length) {
+            return LOAD_MORE_TYPE;
+        } else {
+            return NORMAL_TYPE;
+        }
+    }
 
+    public class ImageHolder extends RecyclerView.ViewHolder {
+        PhotoView mImageView;
         ImageHolder(View itemView) {
             super(itemView);
             mImageView = itemView.findViewById(R.id.iv_immersion);
+        }
+    }
+
+    class LoadMoreHolder extends RecyclerView.ViewHolder {
+        public TRecyclerViewLoadMoreView tRecyclerViewLoadMoreView;
+        LoadMoreHolder(View itemView) {
+            super(itemView);
+            tRecyclerViewLoadMoreView=itemView.findViewById(R.id.view_load_more);
         }
     }
 }

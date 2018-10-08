@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="TBannerCornersShadow" >
+    <declare-styleable name="TBigPicHorizontalScrollView" >
+        <attr name="ripple_color" format="color|reference" />
+        <attr name="ripple_height" format="dimension|reference" />
+        <attr name="drag_text_color" format="color|reference" />
+        <attr name="ripple_text_width" format="dimension|reference" />
+        <attr name="ripple_text_size" format="dimension|reference" />
     </declare-styleable>
 </resources>
