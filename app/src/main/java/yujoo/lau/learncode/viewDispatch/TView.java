@@ -46,8 +46,6 @@ public class TView extends View {
                 TLog.e( "ACTION_MOVE");
                 break;
         }
-
-
         return super.onTouchEvent(event);
     }
 
