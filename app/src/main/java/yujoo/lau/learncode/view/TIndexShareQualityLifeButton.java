@@ -1,4 +1,4 @@
-package yujoo.lau.learncode.viewDispatch;
+package yujoo.lau.learncode.view;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;

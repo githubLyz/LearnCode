@@ -1,12 +1,10 @@
-package yujoo.lau.learncode.viewDispatch;
+package yujoo.lau.learncode.view;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
-
-import com.squareup.okhttp.OkHttpClient;
 
 import yujoo.lau.learncode.utils.TLog;
 

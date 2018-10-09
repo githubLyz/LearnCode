@@ -8,7 +8,7 @@ import android.view.View;
 
 import yujoo.lau.learncode.R;
 import yujoo.lau.learncode.base.TBaseActivity;
-import yujoo.lau.learncode.viewDispatch.TIndexShareQualityLifeButton;
+import yujoo.lau.learncode.view.TIndexShareQualityLifeButton;
 
 /**
  * @author lew.liu
