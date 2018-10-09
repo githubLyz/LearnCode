@@ -9,8 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.github.chrisbanes.photoview.PhotoView;
 
-import io.rong.photoview.PhotoView;
 import yujoo.lau.learncode.R;
 import yujoo.lau.learncode.view.TRecyclerViewLoadMoreView;
 

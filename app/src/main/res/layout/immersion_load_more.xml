@@ -2,6 +2,16 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="80dp"
     android:layout_height="match_parent"
-    android:background="#1d1d1d">
-
+    android:background="#000000">
+    <yujoo.lau.learncode.view.TRecyclerViewLoadMoreView
+        android:id="@+id/view_load_more"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <TextView
+        android:gravity="center_vertical"
+        android:textColor="#fff"
+        android:layout_marginLeft="15dp"
+        android:text="加载更多"
+        android:layout_width="25dp"
+        android:layout_height="match_parent" />
 </RelativeLayout>

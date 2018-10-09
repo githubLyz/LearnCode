@@ -57,14 +57,12 @@ public class TRecyclerView extends RecyclerView implements RecyclerView.OnItemTo
         this.mLinearLayoutManager = linearLayoutManager;
     }
 
-    public void setLoadMoreView(TRecyclerViewLoadMoreView tRecyclerViewLoadMoreView) {
-//        View view = mLinearLayoutManager.findViewByPosition(mTImmersionAdapter.getItemCount()-1);
-//        TImmersionAdapter.LoadMoreHolder viewHolder = (TImmersionAdapter.LoadMoreHolder) findViewHolderForAdapterPosition(mTImmersionAdapter.getItemCount() - 1);
-//        if (viewHolder != null) {
-//            mRecyclerViewLoadMoreView = viewHolder.tRecyclerViewLoadMoreView;
-//
-//        }
-        mRecyclerViewLoadMoreView = tRecyclerViewLoadMoreView;
+    public void setLoadMoreView() {
+        TImmersionAdapter.LoadMoreHolder viewHolder = (TImmersionAdapter.LoadMoreHolder) findViewHolderForAdapterPosition(mTImmersionAdapter.getItemCount() - 1);
+        if (viewHolder != null) {
+            mRecyclerViewLoadMoreView = viewHolder.tRecyclerViewLoadMoreView;
+
+        }
     }
 
     @Override
@@ -74,6 +72,7 @@ public class TRecyclerView extends RecyclerView implements RecyclerView.OnItemTo
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent e) {
+        requestDisallowInterceptTouchEvent(true);
         return super.onInterceptTouchEvent(e);
     }
 
@@ -103,6 +102,7 @@ public class TRecyclerView extends RecyclerView implements RecyclerView.OnItemTo
                     if (distance > mLoadViewWidth) {
                         distance = mLoadViewWidth;
                     }
+                    setLoadMoreView();
                     if (mRecyclerViewLoadMoreView != null) {
                         mRecyclerViewLoadMoreView.reDraw(distance);
                     }
