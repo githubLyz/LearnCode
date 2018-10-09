@@ -25,14 +25,7 @@ public class TRecyclerViewLoadMoreView extends View {
     private Paint mPaint;
     private Path mPath;
     private Rect mRect;
-    private float mLastX;
-    private float mDeltaX;
-    private float startX, startY;
-    private float mLeft;
     private float mDistance;
-    private float mTop;
-    private float mBottom;
-    private int mLoadViewWidth;
 
     public TRecyclerViewLoadMoreView(Context context) {
         super(context);
@@ -60,71 +53,24 @@ public class TRecyclerViewLoadMoreView extends View {
         mPath = new Path();
         mPaint.setStrokeWidth(1);
         mPaint.setAntiAlias(true);
-        mLoadViewWidth = dpToPx(context, 80);
 
     }
-
-    @Override
-    public boolean dispatchTouchEvent(MotionEvent event) {
-        return super.dispatchTouchEvent(event);
-    }
-
-
-//    @Override
-//    public boolean onTouchEvent(MotionEvent event) {
-//        switch (event.getAction()) {
-//            case MotionEvent.ACTION_DOWN:
-//                mLastX = event.getRawX();
-//                break;
-//            case MotionEvent.ACTION_MOVE:
-//                mDeltaX = (event.getRawX() - mLastX);
-//                mLastX = event.getRawX();
-//                if (mDeltaX > 0) {//右滑
-//                    invalidate();
-//                } else {//左滑
-//                    getDrawingRect(mRect);
-//                    mControlPoint.x = (int) (event.getRawX());
-//                    mControlPoint.y = mRect.bottom / 2;
-//                    invalidate();
-//                }
-//                break;
-//            case MotionEvent.ACTION_UP:
-//                getDrawingRect(mRect);
-//                mControlPoint.x = mRect.right;
-//                mControlPoint.y = mRect.bottom / 2;
-//                invalidate();
-//                break;
-//
-//        }
-//        return true;
-//    }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         mPath.reset();
         //起点
-        mPath.moveTo(mRect.right, mRect.top);
+        mPath.moveTo(mDistance, mRect.top);
         //mPath
-        mPath.quadTo(mControlPoint.x, mControlPoint.y, mRect.right, mRect.bottom);
+        mPath.quadTo(-mDistance, mControlPoint.y, mDistance, mRect.bottom);
         //画path
         canvas.drawPath(mPath, mPaint);
-        Log.e("invalidate", "invalidate");
-
     }
 
     public void reDraw(float distance) {
         getDrawingRect(mRect);
-        mControlPoint.x = (int) (mRect.right- distance);
-        Log.e("x",mControlPoint.x+"");
-        Log.e("distance",distance+"");
-        mControlPoint.y = mRect.bottom / 2;
-//
-//        Log.e("left", mRect.left + "");
-        Log.e("right", mRect.right + "");
-//        Log.e("top", mRect.top + "");
-//        Log.e("bottom", mRect.bottom + "");
-//        Log.e("mDistance", mDistance + "");
+        mDistance=distance;
         mControlPoint.y = mRect.bottom / 2;
         invalidate();
     }

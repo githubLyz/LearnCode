@@ -1,8 +1,6 @@
 package yujoo.lau.learncode.gesture;
 
 import android.content.Context;
-import android.graphics.Point;
-import android.graphics.Rect;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -10,9 +8,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.MotionEvent;
-import android.view.View;
 
-import yujoo.lau.learncode.R;
 import yujoo.lau.learncode.view.TRecyclerViewLoadMoreView;
 
 /**
@@ -26,6 +22,16 @@ public class TRecyclerView extends RecyclerView implements RecyclerView.OnItemTo
     private TRecyclerViewLoadMoreView mRecyclerViewLoadMoreView;
     private float mDownX;
     private int mLoadViewWidth;
+    private CheckMoreListener mCheckMoreListener;
+
+    public void setCheckMore(CheckMoreListener l) {
+        this.mCheckMoreListener = l;
+    }
+
+    public interface CheckMoreListener {
+        void checkMore();
+    }
+
 
     public TRecyclerView(Context context) {
         super(context);
@@ -111,7 +117,11 @@ public class TRecyclerView extends RecyclerView implements RecyclerView.OnItemTo
                 break;
             case MotionEvent.ACTION_CANCEL:
             case MotionEvent.ACTION_UP:
-
+                float currentUpX = e.getX();
+                if (mDownX - currentUpX > mLoadViewWidth) {
+                    Log.e("跳转啦", "aaa");
+                    mCheckMoreListener.checkMore();
+                }
                 break;
 
         }

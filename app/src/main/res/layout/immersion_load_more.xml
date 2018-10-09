@@ -9,7 +9,7 @@
         android:layout_height="match_parent" />
     <TextView
         android:gravity="center_vertical"
-        android:textColor="#fff"
+        android:textColor="#000"
         android:layout_marginLeft="15dp"
         android:text="加载更多"
         android:layout_width="25dp"
