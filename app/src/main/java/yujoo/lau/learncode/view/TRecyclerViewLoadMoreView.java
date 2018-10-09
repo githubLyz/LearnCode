@@ -48,7 +48,7 @@ public class TRecyclerViewLoadMoreView extends View {
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
         mControlPoint = new Point();
         mPaint = new Paint();
-        mPaint.setColor(Color.parseColor("#eeeeee"));
+        mPaint.setColor(Color.parseColor("#1d1d1d"));
         mRect = new Rect();
         mPath = new Path();
         mPaint.setStrokeWidth(1);

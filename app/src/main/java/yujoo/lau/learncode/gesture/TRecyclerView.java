@@ -120,7 +120,8 @@ public class TRecyclerView extends RecyclerView implements RecyclerView.OnItemTo
                 float currentUpX = e.getX();
                 if (mDownX - currentUpX > mLoadViewWidth) {
                     Log.e("跳转啦", "aaa");
-                    mCheckMoreListener.checkMore();
+                    if (mCheckMoreListener != null)
+                        mCheckMoreListener.checkMore();
                 }
                 break;
 
